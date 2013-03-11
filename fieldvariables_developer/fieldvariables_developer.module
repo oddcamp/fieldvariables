@@ -114,7 +114,7 @@ function _fieldvariables_developer_log_content($field_name, $field_values) {
   );
   $log .= "\n";
   $log .= sprintf(
-    '<div id="%s-log" class="fieldvariable-is_">%s</div>',
+    '<div id="%s-log" class="fieldvariable-content">%s</div>',
     $field_name,
     htmlentities(print_r($field_values, true))
   );
