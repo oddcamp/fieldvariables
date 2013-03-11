@@ -1,12 +1,12 @@
 
 -- SUMMARY --
 
-Field Variables provides all field values as variables in a view mode for an
+Field Variables provides field values as variables in a view mode for an
 entity. It's an alternative for those who prefer to work with files rather
 than configuration or when using tailored tpl files is the best fit.
 
 E.g. if you add the fields "introduction" and "facts" to the Article node type
-these will be available the following variables in the node tpl file:
+these will be available as the following variables in the node tpl file:
 
 * Raw values:
   $article_introduction
