@@ -1,0 +1,7 @@
+name = Field Variables Developer
+description = Developer addon functionality for Field Variables. You don't need this in production.
+package = Fields
+core = 7.x
+dependencies[] = fieldvariables
+stylesheets[all][] = fieldvariables_developer.css
+scripts[] = fieldvariables_developer.js

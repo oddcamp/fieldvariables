@@ -1,0 +1,6 @@
+name = Field Variables
+description = Makes it easy to provide field values as variables in node template files.
+package = Fields
+core = 7.x
+configure = admin/structure/fieldvariables
+dependencies[] = field_extract
