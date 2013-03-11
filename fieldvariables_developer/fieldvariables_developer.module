@@ -1,6 +1,11 @@
 <?php
 
 /**
+* @file
+* Provides extra developer functionality.
+*/
+
+/**
  * Implements hook_entity_view().
  */
 function fieldvariables_developer_entity_view($entity, $type, $view_mode, $langcode) {
@@ -78,7 +83,8 @@ function _fieldvariables_developer_log_values($field, $field_name, $field_values
       $field['widget']['module'],
       gettype($field_values)
     );
-  } else {
+  }
+  else {
     $log = sprintf(
       "<strong>%s</strong> (%s / %s) \n",
       $field_name,
@@ -88,15 +94,20 @@ function _fieldvariables_developer_log_values($field, $field_name, $field_values
 
     if (is_object($field_values)) {
       $log .= _fieldvariables_developer_log_content($field_name, $field_values);
-    } elseif (is_array($field_values)) {
+    }
+    elseif (is_array($field_values)) {
       $log .= _fieldvariables_developer_log_content($field_name, $field_values);
-    } elseif (is_string($field_values)) {
+    }
+    elseif (is_string($field_values)) {
       $log .= htmlentities($field_values);
-    } elseif (is_numeric($field_values)) {
+    }
+    elseif (is_numeric($field_values)) {
       $log .= filter_xss($field_values);
-    } elseif (is_bool($field_values)) {
+    }
+    elseif (is_bool($field_values)) {
       $log .= $field_values;
-    } else {
+    }
+    else {
       $log .= filter_xss($field_values);
     }
 
@@ -116,7 +127,7 @@ function _fieldvariables_developer_log_content($field_name, $field_values) {
   $log .= sprintf(
     '<div id="%s-log" class="fieldvariable-content">%s</div>',
     $field_name,
-    htmlentities(print_r($field_values, true))
+    htmlentities(print_r($field_values, TRUE))
   );
   $log .= '</div>';
 
