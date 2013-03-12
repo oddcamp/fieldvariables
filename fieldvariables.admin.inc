@@ -33,7 +33,7 @@ function fieldvariables_settings() {
         '#default_value' => variable_get('fieldvariables_entity_' . $entity),
       );
 
-      // Loop bundles of this entity
+      // Loop bundles of this entity.
       foreach ($entity_values['bundles'] as $bundle => $bundle_values) {
         $form['entity_' . $entity]['entity_' . $entity . '_' . $bundle] = array(
           '#type' => 'fieldset',
@@ -42,7 +42,7 @@ function fieldvariables_settings() {
           '#collapsed' => FALSE,
         );
 
-        // Loop view modes for this entity
+        // Loop view modes for this entity.
         foreach ($entity_values['view modes'] as $view_mode => $view_mode_values) {
           $form['entity_' . $entity]['entity_' . $entity . '_' . $bundle]['fieldvariables_entity_' . $entity . '_' . $bundle . '_' . $view_mode] = array(
             '#type' => 'checkbox',

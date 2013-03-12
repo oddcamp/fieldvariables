@@ -48,7 +48,7 @@ function fieldvariables_developer_theme($vars = array()) {
  * Implements hook_form_alter().
  */
 function fieldvariables_developer_form_fieldvariables_settings_alter(&$form, &$form_state, $form_id) {
-  // Replace the regular info with developer info
+  // Replace the regular info with developer info.
   unset($form['information']);
   $form['developer_information'] = array(
     '#markup' => '<h2>' . t('Developer mode enabled') . '</h2>' . t('Please note that as the Field Variables Developer module is enabled field variables will be loaded on all bundles and view modes.'),
@@ -59,7 +59,7 @@ function fieldvariables_developer_form_fieldvariables_settings_alter(&$form, &$f
 }
 
 /**
- * Log fields
+ * Log fields.
  */
 function _fieldvariables_developer_log($field, $field_name, $field_values) {
   $log = sprintf(
