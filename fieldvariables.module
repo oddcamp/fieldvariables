@@ -24,7 +24,9 @@ function fieldvariables_menu() {
  * Implements hook_entity_view().
  */
 function fieldvariables_entity_view($entity, $type, $view_mode, $langcode) {
-  if (!_fieldvaribles_load($type, $entity->type, $view_mode)) {
+  $entity_type = isset($entity->uid) ? 'user' : $entity->type;
+
+  if (!_fieldvaribles_load($type, $entity_type, $view_mode)) {
     return;
   }
 
