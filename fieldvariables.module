@@ -37,7 +37,9 @@ function fieldvariables_entity_view($entity, $type, $view_mode, $langcode) {
     $field_name_formatted = $field_name . '_formatted';
 
     $field_values = field_extract_values($type, $entity, $field['field_name']);
-    $field_values_formatted = field_extract_values($type, $entity, $field['field_name'], array('formatter' => 'default'));
+
+    $formatter = _fieldvariables_formatter($field['display']['default']['module']);
+    $field_values_formatted = field_extract_values($type, $entity, $field['field_name'], array('formatter' => $formatter));
 
     $entity->$field_name = _fieldvariables_field_values($field_values);
     $entity->$field_name_formatted = render(_fieldvariables_field_values($field_values_formatted));
@@ -89,4 +91,17 @@ function _fieldvariables_field_values($field_values) {
   }
 
   return $field_values;
+}
+
+/**
+ * Set formatter
+ * @param  string $module
+ * @return string
+ */
+function _fieldvariables_formatter($module) {
+  if ($module == 'link') {
+    return 'link_default';
+  } else {
+    return 'default';
+  }
 }
